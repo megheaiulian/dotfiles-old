@@ -6,3 +6,6 @@ if not test -e ~/.config/fish/functions/fisher.fish
 end
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme solarized-dark
+if type -fq dircolors and test -e ~/.dircolors.256
+  eval (dircolors -c ~/.dircolors.256 | sed 's/>&\/dev\/null$//')
+end
