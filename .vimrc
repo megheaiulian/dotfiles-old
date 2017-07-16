@@ -15,5 +15,4 @@ call plug#end()
 syntax enable
 set background=dark
 colorscheme solarized
-map <C-n> :NERDTreeToggle<CR>
-
+set showcmd
