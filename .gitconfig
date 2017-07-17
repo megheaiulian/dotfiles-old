@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Meghea Iulian
+  email = iulian.meghea@gmail.com
+[core]
+  ignorecase = true
+	excludesfile = ~/.gitignore
