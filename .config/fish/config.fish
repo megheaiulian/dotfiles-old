@@ -16,7 +16,12 @@ end
 _dircolors_set_256_color
 
 set NPM_PACKAGES "$HOME/.npm-packages"
-
 if test -x "$NPM_PACKAGES/bin"
     set PATH "$NPM_PACKAGES/bin" $PATH
 end
+
+set RUBY_PATH "$HOME/.gem/ruby/2.3.0/bin"
+
+if test -x "$RUBY_PATH"
+  set -gx PATH "$RUBY_PATH" $PATH
+end 
