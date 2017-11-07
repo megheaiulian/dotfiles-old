@@ -9,6 +9,7 @@ set $menu dmenu_run
 
 # Output configuration
 output * bg ~/.config/sway/wallpaper.jpg fill
+output eDP-1 scale 2
 output WLC-1 scale 2
 output WLC-1 pos 0,0 res 3200x1800
 input "2:7:SynPS/2_Synaptics_TouchPad" {
@@ -25,6 +26,7 @@ bindsym $mod+d exec $menu
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exit
+bindsym $mod+Shift+t env WAYLAND_DISPLAY= alacritty --title visor
 
 # Moving around:
 bindsym $mod+$left focus left
@@ -47,26 +49,36 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # Workspaces: switch to workspace, move focused window to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+set $workspace1 "1 Internet "
+set $workspace2 "2 Terminal "
+set $workspace3 "3 Chat "
+set $workspace4 "4 Code "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Layout stuff:
 bindsym $mod+b splith #split horizontal
@@ -105,26 +117,51 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+# Base16 colors
+set $base00 #002b36
+set $base01 #073642
+set $base02 #586e75
+set $base03 #657b83
+set $base04 #839496
+set $base05 #93a1a1
+set $base06 #eee8d5
+set $base07 #fdf6e3
+set $base08 #dc322f
+set $base09 #cb4b16
+set $base0A #b58900
+set $base0B #859900
+set $base0C #2aa198
+set $base0D #268bd2
+set $base0E #6c71c4
+set $base0F #d33682
+set $baseFF #ffffff
 
-# Windows config
-
-
+default_floating_border none
+hide_edge_borders both
+gaps inner 2
+gaps outer 0
+default_border pixel 1
 # Status Bar:
 font pango: Inconsolata for Powerline
 bar {
   position bottom
   status_command i3blocks -c ~/.config/sway/blocks.conf
   colors {
-    background #002b36
-    statusline #839496
-    separator  #586e75
-    focused_workspace  #b58900 #b58900 #002b36
-    active_workspace   #586e75 #586e75 #002b36
-    inactive_workspace #073642 #002b36 #839496
-    urgent_workspace   #dc322f #dc322f #fdf6e3 
+    background $base00
+    separator  $base01
+    statusline $base02
+
+    # State             Border  BG      Text
+    focused_workspace   $base00 $base00 $baseFF
+    active_workspace    $base00 $base00 $baseFF
+    inactive_workspace  $base00 $base00 $base02
+    urgent_workspace    $base00 $base00 $base08
+    binding_mode        $base00 $base00 $base0B
   }
 }
-client.focused          #002b36 #586e75 #fdf6e3 #268bd2
-client.focused_inactive #002b36 #073642 #839496 #073642
-client.unfocused        #002b36 #073642 #839496 #073642
-client.urgent           #002b36 #dc322f #fdf6e3 #002b36
+client.focused          $base01 $base00 $baseFF $base01 $base01
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base02 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07

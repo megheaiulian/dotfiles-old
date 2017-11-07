@@ -31,6 +31,8 @@ if exists('*minpac#init')
   call minpac#add('Glench/Vim-Jinja2-Syntax', {'type': 'opt'})
   call minpac#add('qbbr/vim-twig', {'type': 'opt'})
   call minpac#add('dag/vim-fish', {'type': 'opt'})
+  "Git
+  call minpac#add('tpope/vim-fugitive', {'type': 'opt'})
 endif
 
 filetype plugin indent on
@@ -75,6 +77,7 @@ autocmd MyAutoCmd VimEnter * packadd ansible-vim
 autocmd MyAutoCmd VimEnter * packadd Vim-Jinja2-Syntax
 autocmd MyAutoCmd VimEnter * packadd vim-twig
 autocmd MyAutoCmd VimEnter * packadd vim-fish
+autocmd MyAutoCmd VimEnter * packadd vim-fugitive
 
 " NerdTree
 nnoremap <S-Tab> :NERDTreeToggle<CR>
