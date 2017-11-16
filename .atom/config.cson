@@ -1,0 +1,22 @@
+"*":
+  "atom-easy-jsdoc":
+    useReturns: true
+  core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "whitespace"
+    ]
+    telemetryConsent: "limited"
+  editor:
+    fontSize: 12
+    showInvisibles: true
+  "exception-reporting":
+    userId: "bd4b81db-758c-4626-8e1a-3680dee39ccf"
+  "linter-eslint":
+    fixOnSave: true
+    lintHtmlFiles: true
+  "linter-scss-lint":
+    executablePath: "/home/iulian/.gem/ruby/2.3.0/bin/scss-lint"
+  "linter-ui-default": {}
+  welcome:
+    showOnStartup: false
