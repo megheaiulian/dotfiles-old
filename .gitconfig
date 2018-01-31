@@ -4,4 +4,6 @@
   email = iulian.meghea@gmail.com
 [core]
   ignorecase = true
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
+[credential]
+	helper = /run/current-system/sw/bin/git-credential-gnome-keyring

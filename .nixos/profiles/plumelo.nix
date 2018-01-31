@@ -30,8 +30,6 @@
     tmux.enable = true;
     fish.enable = true;
     java.enable = true;
-
-    ssh.startAgent = true;
   };
 
   hardware = {
@@ -44,7 +42,7 @@
     acl
     p7zip
     wget
-    git
+    gitKeyring
     slack
     firefox
     chromium
