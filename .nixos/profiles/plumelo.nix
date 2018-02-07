@@ -69,6 +69,7 @@
     ag
     keepassx-community
     skypeforlinux
+    taskwarrior
   ];
 
   users.defaultUserShell = "/run/current-system/sw/bin/fish";
