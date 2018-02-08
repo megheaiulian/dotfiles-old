@@ -2,7 +2,6 @@
 {
   imports = [
     ./plumelo.nix
-    ../modules/hardware/kernel/linux_4_15.nix
   ];
 
   networking.hostName = "plumone";
@@ -33,6 +32,7 @@
     kernelModules = [
       "coretemp"
     ];
+    kernelPackages = pkgs.linuxPackages_4_15; 
   };
 
   nix.buildCores = 16;
