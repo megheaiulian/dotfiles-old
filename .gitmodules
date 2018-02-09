@@ -1,6 +1,6 @@
 [submodule ".vim"]
 	path = .vim
-	url = git@github.com:megheaiulian/my-vim.git
+	url = git@github.com:plumelo/dotfiles-vim.git
 [submodule ".nixos"]
 	path = .nixos
 	url = git@github.com:plumelo/nixos.git
